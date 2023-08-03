@@ -1,0 +1,28 @@
+---
+# tasks file for docker
+
+- name: "Download Docker installation script"
+  get_url:
+    url: "{{ docker_install_url }}"
+    dest: "{{ dest_file }}"
+
+- name: "Append 'execute' permission"
+  file:
+    path: "{{ dest_file | basename }}"
+    owner: "{{ os_user }}"
+    mode: "744"
+
+- name: "Verify if 'docker' is installed"
+  shell: "docker -v"
+  register: docker_command_output
+  ignore_errors: true
+
+- name: "Execute the script"
+  command: "bash {{ dest_file }}"
+  when: docker_command_output.stderr is search('not found')
+
+- name: "Docker is available"
+  debug: 
+    msg: "Docker have been already installed !!!"
+  when: docker_command_output.stderr == ""  
+    

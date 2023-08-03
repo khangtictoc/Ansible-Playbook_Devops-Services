@@ -1,0 +1,13 @@
+# ---
+# tasks file for sonarqube
+
+
+- include_vars: "OS/{{ ansible_os_family }}.yml"
+
+- include: pre-setup.yml
+- include: "OS/{{ ansible_os_family }}.yml"
+- include: setup-postgres.yml
+- include: setup-sonar.yml
+
+  
+

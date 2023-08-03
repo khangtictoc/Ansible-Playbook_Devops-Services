@@ -1,0 +1,11 @@
+---
+# tasks file for nexus
+
+
+- include_vars: "OS/{{ ansible_os_family }}.yml"
+- include: "OS/{{ ansible_os_family }}.yml"
+
+- include: "pre-setup.yml"
+- include: "nexus-setup.yml"
+
+

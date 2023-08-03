@@ -1,0 +1,11 @@
+---
+# tasks file for gcpcli
+
+# Include TASKS & VARIABLES specifically to each OS
+
+- include_vars: "OS/{{ ansible_os_family }}.yml"
+- include: "OS/{{ ansible_os_family }}.yml"
+
+
+    
+

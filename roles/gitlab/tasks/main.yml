@@ -1,0 +1,8 @@
+---
+# tasks file for gitlab
+
+- include_vars: "OS/{{ ansible_os_family }}.yml"
+
+- include: pre-setup.yml
+- include: setup-gitlab.yml
+
