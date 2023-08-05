@@ -20,4 +20,4 @@
 
 - name: Execute the script
   command: "{{ dest_file }}"
-  when: docker_command_output.stderr is search('not found')
+  when: docker_command_output.changed == false
