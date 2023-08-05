@@ -1,3 +1,4 @@
+---
 - name: Add user '{{ nexus_user }}' with password '{{ nexus_pass }}'
   become: true
   user:

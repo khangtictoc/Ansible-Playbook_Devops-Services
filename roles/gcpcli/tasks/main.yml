@@ -8,4 +8,3 @@
 
 - name: Include tasks
   include: "OS/{{ ansible_os_family }}.yml"
-

@@ -1,3 +1,4 @@
+---
 - name: Create user and grant privileges for 'sonarqube' Database
   become: true
   become_user: "{{ db_user }}"

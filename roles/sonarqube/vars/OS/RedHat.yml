@@ -1,3 +1,4 @@
+---
 java17_package: https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
 postgres_package_url: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 

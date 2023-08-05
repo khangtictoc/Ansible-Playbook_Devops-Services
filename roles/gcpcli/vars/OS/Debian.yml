@@ -1,3 +1,4 @@
+---
 # Add package information
 repo_url: deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main
 repo_management_path: /etc/apt/sources.list.d/google-cloud-sdk.list

@@ -1,3 +1,4 @@
+---
 repo_path: /etc/yum.repos.d/jenkins.repo
 
 # Add package information

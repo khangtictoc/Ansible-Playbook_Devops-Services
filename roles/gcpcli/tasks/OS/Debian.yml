@@ -1,3 +1,4 @@
+---
 - name: Install pre-requisite packages
   become: true
   apt:
@@ -25,4 +26,3 @@
     update_cache: true # yum update
     name: google-cloud-cli
     state: present
-

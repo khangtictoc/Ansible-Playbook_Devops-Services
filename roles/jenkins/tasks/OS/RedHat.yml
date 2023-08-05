@@ -1,3 +1,4 @@
+---
 - name: Add Jenkins's package information in Yum
   become: true
   get_url:

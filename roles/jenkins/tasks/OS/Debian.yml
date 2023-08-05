@@ -1,3 +1,4 @@
+---
 - name: Add GPG key to apt database for verifying
   become: true
   get_url:

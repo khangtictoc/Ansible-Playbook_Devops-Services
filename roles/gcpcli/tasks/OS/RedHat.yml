@@ -1,3 +1,4 @@
+---
 - name: "Add Google Cloud CLI's package information in Yum"
   become: true
   template:
@@ -10,4 +11,3 @@
     update_cache: true # yum update
     name: google-cloud-cli
     state: present
-

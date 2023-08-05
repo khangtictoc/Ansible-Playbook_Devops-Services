@@ -9,4 +9,3 @@
 
 - name: Include main tasks
   include: setup-gitlab.yml
-
