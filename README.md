@@ -1,12 +1,12 @@
 Devops tools & platforms installation
 =========
 
-Install tools and platform for learning Devops on 3 VMs. Including Gitlab, Docker, GCloud CLI, Jenkins, Nexus, Sonarqube
+Install tools and platform for learning Devops on 3 VMs (both CentOS and Ubuntu), including Gitlab, Docker, GCloud CLI, Jenkins, Nexus, Sonarqube
 
 Requirements
 ------------
 
-A machine installed with `Virtual Box`. Bootstrapping VMs by `Vagrant`. Refer to [](this repo) to get **Vagrantfile** to use, we following that repo for deployment.
+A machine installed with `Virtual Box`. Bootstrapping VMs by `Vagrant`. Refer to [this repo](https://github.com/khangtictoc/Devops-Service-Installation_Gitlab-Jenkins-Nexus-SonarQube/blob/main/Vagrantfile) to get **Vagrantfile** to use, I follow the exact deployment form that.
 
 You have to install Ansible on the **Controller Node** to use. I have not install in advanced as I want this **Vagrantfile** is as "pure" as possible, only for creating VMs and allowing them to communicate each other. 
 
@@ -14,7 +14,7 @@ My Testing Environment
 --------------
 
 | Name | Specs |
-| ----- | ---- |
+| ---- | ----- |
 | Virtual Box | Version 7.0.8  |
 | Vagrant | Version 2.3.7 |
 | Ansible | 2.9 | 
@@ -24,7 +24,7 @@ My Testing Environment
 
 > Note: Users and password in VM when booting up by Vagrant is 'vagrant' and 'vagrant', this is set up by default.
 
-> You can change system's CPU and RAM above in Vagrantfile; as well as static IP address of each VM and if so, you have to change those in accordance with `host_vars` folder
+> You can change system's CPU and RAM above in Vagrantfile; as well as static IP address of each VM and if so, you have to change those in  `host_vars` folder
 
 
 Playbook information
