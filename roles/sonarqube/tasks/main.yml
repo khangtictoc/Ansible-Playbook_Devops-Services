@@ -2,12 +2,19 @@
 # tasks file for sonarqube
 
 
-- include_vars: "OS/{{ ansible_os_family }}.yml"
+- name: Import variables
+  include_vars: "OS/{{ ansible_os_family }}.yml"
 
-- include: pre-setup.yml
-- include: "OS/{{ ansible_os_family }}.yml"
-- include: setup-postgres.yml
-- include: setup-sonar.yml
+- name: Run pre-setup
+  include: pre-setup.yml
 
-  
+- name: Run dedicated tasks
+  include: "OS/{{ ansible_os_family }}.yml"
+
+- name: Setup PostgreSQL Database
+  include: setup-postgres.yml
+
+- name: Setup Sonarqube service
+  include: setup-sonar.yml
+
 

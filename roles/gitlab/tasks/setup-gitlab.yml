@@ -1,35 +1,36 @@
-- name: "Download Gitlab package repository"
+- name: Download Gitlab package repository
   become: true
-  get_url: 
-    url:  "{{ gitlab_package_url }}"
+  get_url:
+    url: "{{ gitlab_package_url }}"
     dest: /home/{{ os_user }}
 
-- name: "Change downloaded file's permission"
+- name: Change downloaded file's permission
   become: true
-  file: 
+  file:
     path: /home/{{ os_user }}/{{ gitlab_package_url | basename }}
-    mode: "744"
+    mode: "0744"
 
-- name: "Execute installation script"
+- name: Execute installation script
   become: true
-  shell: bash /home/{{ os_user }}/{{ gitlab_package_url | basename }}
+  command: /home/{{ os_user }}/{{ gitlab_package_url | basename }}
 
-- name: "Install Gitlab"
+- name: Install Gitlab
   become: true
-  yum: 
+  yum:
     name: gitlab-ee
     state: present
 
-- name: "Gitlab reconfiguration"
+- name: Gitlab reconfiguration
   become: true
-  shell: gitlab-ctl reconfigure
+  command: gitlab-ctl reconfigure
+  changed_when: false
 
-
-- name: "Get password content for installation"
+- name: Get password content for installation
   become: true
   command: cat {{ gitlab_pass }}
   register: gitlab_pass
+  changed_when: false
 
-- name: "Print out password"
+- name: Print out password
   debug:
     msg: "{{ gitlab_pass }}"

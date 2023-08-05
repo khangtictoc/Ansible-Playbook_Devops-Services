@@ -1,57 +1,55 @@
-- name: "Download nexus installation file"
+- name: Download nexus installation file
   become: true
   get_url:
     url: "{{ nexus_download_url }}"
     dest: "{{ nexus_install_path }}/{{ nexus_download_url | basename}}"
-  
 
-- name: "Install 'unzip' package"
+- name: Install 'unzip' package
   become: true
-  yum: 
+  yum:
     name: unzip
     state: present
 
-- name: "Extract the downloaded file"
+- name: Extract the downloaded file
   become: true
-  unarchive: 
+  unarchive:
     src: "{{ nexus_install_path }}/{{ nexus_download_url | basename}}"
     dest: /opt/nexus
     remote_src: true
 
-- name: "Change folder '/opt/nexus' permission for execution"
+- name: Change folder '/opt/nexus' permission for execution
   become: true
   file:
     path: "{{ nexus_install_path }}"
     recurse: true
     owner: "{{ nexus_user }}"
     group: "{{ nexus_user }}"
-    mode: "744"
+    mode: "0744"
 
-- name: "Install JDK 8"
+- name: Install JDK 8
   become: true
-  yum: 
+  yum:
     name: "{{ repo_install }}"
     state: present
 
-- name: "Add Nexus service configuration file"
+- name: Add Nexus service configuration file
   become: true
-  template: 
+  template:
     src: nexus_service.j2
     dest: /etc/systemd/system/nexus.service
 
-- name: "Apply Nexus service's configuration"
+- name: Apply Nexus service's configuration
   become: true
-  systemd: 
+  systemd:
     daemon_reload: true
 
-- name: "Start Nexus service"
+- name: Start Nexus service
   become: true
   service:
     name:  "{{ service_name }}"
     state: started
 
-
-- name: "Enable port 8081 for Nexus service"
+- name: Enable port 8081 for Nexus service
   become: true
   firewalld:
     port: "8081/tcp"

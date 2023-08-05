@@ -4,6 +4,6 @@ repo_path: /etc/apt/sources.list.d/jenkins.list
 jenkins_package: https://pkg.jenkins.io/debian-stable
 jenkins_verify_key: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 
-repo_install: 
+repo_install:
 - openjdk-11-jdk-headless
 - jenkins

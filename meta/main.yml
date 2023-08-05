@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: khangtictoc
   description: Install tools and platform for learning Devops on 3 VMs. Including Gitlab, Docker, GCloud CLI, Jenkins, Nexus, Sonarqube

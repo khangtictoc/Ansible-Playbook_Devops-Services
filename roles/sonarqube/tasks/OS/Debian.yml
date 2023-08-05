@@ -1,4 +1,4 @@
-- name: "Install Java 17"
+- name: Install Java 17
   become: true
   apt:
     deb: "/home/{{ os_user }}/{{ java17_package | basename }}"
@@ -9,8 +9,8 @@
   apt_key:
     url: "{{ postgres_verify_key }}"
     state: present
-  
-- name: Get Debian distro version name 
+
+- name: Get Debian distro version name
   shell: echo $(lsb_release -cs)
   register: distro_name
 
@@ -21,7 +21,7 @@
     state: present
     update_cache: true
 
-- name: "Install PostgreSQL"
+- name: Install PostgreSQL
   become: true
   apt:
     name: "{{ item }}"

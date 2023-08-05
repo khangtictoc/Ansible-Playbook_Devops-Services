@@ -3,11 +3,11 @@
   template:
     src: "OS/{{ ansible_os_family }}/Gcloud_CLI_repo.j2"
     dest: "{{ repo_management_path }}"
-  
+
 - name: "Install Google Cloud CLI package"
   become: true
   yum:
-    update_cache: true # yum update 
+    update_cache: true # yum update
     name: google-cloud-cli
     state: present
 

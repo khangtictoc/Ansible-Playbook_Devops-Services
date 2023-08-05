@@ -4,6 +4,6 @@ repo_path: /etc/yum.repos.d/jenkins.repo
 jenkins_package: https://pkg.jenkins.io/redhat-stable/jenkins.repo
 jenkins_verify_key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
-repo_install: 
+repo_install:
 - java-11-openjdk
 - jenkins

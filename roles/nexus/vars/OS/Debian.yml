@@ -1,2 +1,2 @@
-repo_install: 
+repo_install:
 - openjdk-8-jdk-headless

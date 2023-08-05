@@ -3,7 +3,7 @@
   get_url:
     url: "{{ jenkins_verify_key }}"
     dest: /usr/share/keyrings/jenkins-keyring.asc
-    
+
 - name: Add Jenkins apt repository.
   become: true
   apt_repository:
@@ -11,10 +11,10 @@
     state: present
     update_cache: true
 
-- name: "Install JDK 11 and Jenkins"
+- name: Install JDK 11 and Jenkins
   become: true
   yum:
     update_cache: true
     name: "{{ item }}"
-    state: present 
+    state: present
   loop: "{{ repo_install }}"

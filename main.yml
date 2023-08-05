@@ -7,7 +7,7 @@
   hosts: centos1, ubuntu1
   pre_tasks:
     - name: Include global vars
-      include_vars: main.yml 
+      include_vars: main.yml
   roles:
   - gitlab
 
@@ -15,7 +15,7 @@
   hosts: centos2, ubuntu2
   pre_tasks:
     - name: Include global vars
-      include_vars: main.yml 
+      include_vars: main.yml
   roles:
   - jenkins
   - docker
@@ -25,7 +25,7 @@
   hosts: centos3, ubuntu3
   pre_tasks:
     - name: Include global vars
-      include_vars: main.yml 
+      include_vars: main.yml
   roles:
   - nexus
   - sonarqube

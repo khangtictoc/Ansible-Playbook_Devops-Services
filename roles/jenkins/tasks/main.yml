@@ -6,7 +6,7 @@
 
 - name: "Apply Jenkins service's configuration"
   become: true
-  systemd: 
+  systemd:
     daemon_reload: true
 
 - name: "Start Jenkins service"
@@ -27,6 +27,7 @@
   become: true
   command: cat {{ jenkins_pass_path }}
   register: jenkins_pass
+  changed_when: false
 
 - name: "Print out password"
   debug:

@@ -1,36 +1,35 @@
-- name: "Install pre-requisite package"
+- name: Install pre-requisite package
   become: true
-  package: 
+  package:
     name: "{{ item }}"
     state: present
   loop: "{{ repo_install }}"
 
-
-- name: "Enable and start ssh"
+- name: Enable and start ssh
   become: true
   systemd:
     name: sshd
     state: started
     enabled: true
 
-- name: "Allow 'http' and 'https' service in Firewalld"
+- name: Allow 'http' and 'https' service in Firewalld
   become: true
   firewalld:
     service: "{{ item }}"
     permanent: true
     state: enabled
-  loop: 
+  loop:
   - http
   - https
-  when: ansible_os_family == "RedHat"
+  when: ansible_os_family == "RedHat
 
-- name: "Install Postfix"
+- name: Install Postfix"
   become: true
-  package: 
+  package:
     name: postfix
     state: present
 
-- name: "Enable and start postfix"
+- name: Enable and start postfix
   become: true
   systemd:
     name: postfix

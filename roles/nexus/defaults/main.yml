@@ -4,7 +4,7 @@
 service_name: nexus
 
 # System user
-nexus_user: nexus 
+nexus_user: nexus
 nexus_pass: nexus
 
 nexus_install_path: /opt/nexus
