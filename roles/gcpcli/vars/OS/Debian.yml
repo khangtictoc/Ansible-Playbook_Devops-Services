@@ -11,6 +11,3 @@ repo_install:
 - gnupg
 - curl
 - sudo
-
-
-
