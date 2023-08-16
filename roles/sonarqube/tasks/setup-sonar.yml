@@ -89,4 +89,5 @@
     port: 9000/tcp
     permanent: true
     state: enabled
+    immediate: true
   when: ansible_os_family == "RedHat"
