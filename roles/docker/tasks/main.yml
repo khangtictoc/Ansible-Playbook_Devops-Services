@@ -21,3 +21,16 @@
 - name: Execute the script
   command: "{{ dest_file }}"
   when: docker_command_output.changed == false
+
+- name: Add "docker" user to "root" group
+  become: true
+  user:
+   name: docker
+   group: root
+   append: yes
+
+- name: Start and enable docker service
+  become: true
+  service:
+   name: docker
+   enabled: true
