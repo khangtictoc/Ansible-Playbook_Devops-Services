@@ -14,7 +14,7 @@
 
 - name: Install JDK 11 and Jenkins
   become: true
-  yum:
+  apt:
     update_cache: true
     name: "{{ item }}"
     state: present
