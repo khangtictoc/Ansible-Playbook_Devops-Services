@@ -1,0 +1,13 @@
+# ---
+# - name: Converge
+#   hosts: all
+#   gather_facts: false
+#   tasks:
+#     - name: "Include extensions"
+#       ansible.builtin.include_role:
+#         name: "extensions"
+---
+- name: Include a playbook from a collection
+  ansible.builtin.import_role: 
+    name: myrole
+    tasks_from: other

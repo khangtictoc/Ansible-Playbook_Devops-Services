@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: delegated
+platforms:
+  - name: instance
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
+
+# dependency:
+#   name: galaxy
+#   options:
+#     requirements-file: requirements.yml'
+# driver:
+#   name: docker
+# lint:
+#   name: yamllint
+# platforms:
+#   - name: molecule-ubuntu
+#     image: ubuntu:20.04 #18.04
+# provisioner:
+#   name: ansible
+#   lint:
+#     name: ansible-lint
+# verifier:
+#   name: testservice
+#   lint:
+#     name: flake8

@@ -1,0 +1,4 @@
+---
+- name: Task is running from within the role
+  ansible.builtin.debug:
+    msg: "This is a task from my_role."
