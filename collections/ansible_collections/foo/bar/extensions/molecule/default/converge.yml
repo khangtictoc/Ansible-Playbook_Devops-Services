@@ -9,7 +9,7 @@
 
 ---
 - name: Include a playbook from a collection
-  ansible.builtin.import_playbook: ../my_playbook
+  ansible.builtin.import_playbook: foo.bar.my_playbook
 
 # ---
 # - name: Include a role from a collection
